@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2620A9A9-498B-4962-8915-8C388D7F7B28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Neverball.NET</RootNamespace>
+    <AssemblyName>Neverball.NET</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ALTSDK_1_0</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE;ALTSDK_1_0</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alt.Sketch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Alt.Sketch.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AltIntegration\AltIntegration.cs" />
+    <Compile Include="AltIntegration\PCLTools\PCLThread.cs" />
+    <Compile Include="AltIntegration\PCLTools\PCLTools.cs" />
+    <Compile Include="AltIntegration\PCLTools\PCLTools_Convert.cs" />
+    <Compile Include="ball\ball_main.cs" />
+    <Compile Include="ball\cmd\Command.cs" />
+    <Compile Include="ball\cmd\List.cs" />
+    <Compile Include="ball\cmd\Queue.cs" />
+    <Compile Include="ball\Demo.cs" />
+    <Compile Include="ball\game_client.cs" />
+    <Compile Include="ball\game_common.cs" />
+    <Compile Include="ball\game_proxy.cs" />
+    <Compile Include="ball\game_server.cs" />
+    <Compile Include="ball\hud.cs" />
+    <Compile Include="ball\Level.cs" />
+    <Compile Include="ball\Progress.cs" />
+    <Compile Include="ball\Score.cs" />
+    <Compile Include="ball\Set.cs" />
+    <Compile Include="ball\st_done.cs" />
+    <Compile Include="ball\st_fall_out.cs" />
+    <Compile Include="ball\st_goal.cs" />
+    <Compile Include="ball\st_level.cs" />
+    <Compile Include="ball\st_null.cs" />
+    <Compile Include="ball\st_over.cs" />
+    <Compile Include="ball\st_pause.cs" />
+    <Compile Include="ball\st_play.cs" />
+    <Compile Include="ball\st_set.cs" />
+    <Compile Include="ball\st_start.cs" />
+    <Compile Include="ball\st_time_out.cs" />
+    <Compile Include="ball\st_title.cs" />
+    <Compile Include="ball\Util.cs" />
+    <Compile Include="NeverballGameWindow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="share\Array.cs" />
+    <Compile Include="share\Audio.cs" />
+    <Compile Include="share\Back.cs" />
+    <Compile Include="share\Ball.cs" />
+    <Compile Include="share\Binary.cs" />
+    <Compile Include="share\Common.cs" />
+    <Compile Include="share\Config.cs" />
+    <Compile Include="share\FileSystem.cs" />
+    <Compile Include="share\Geom.cs" />
+    <Compile Include="share\gui.cs" />
+    <Compile Include="share\Image.cs" />
+    <Compile Include="share\Item.cs" />
+    <Compile Include="share\Part.cs" />
+    <Compile Include="share\solid\Solid.cs" />
+    <Compile Include="share\solid\solid_phys.cs" />
+    <Compile Include="share\solid\s_bill.cs" />
+    <Compile Include="share\solid\s_body.cs" />
+    <Compile Include="share\solid\s_File.cs" />
+    <Compile Include="share\solid\s_File_items.cs" />
+    <Compile Include="share\solid\s_goal.cs" />
+    <Compile Include="share\solid\s_item.cs" />
+    <Compile Include="share\solid\s_jump.cs" />
+    <Compile Include="share\solid\s_mtrl.cs" />
+    <Compile Include="share\solid\s_swch.cs" />
+    <Compile Include="share\State.cs" />
+    <Compile Include="share\Vec3.cs" />
+    <Compile Include="share\Video.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
